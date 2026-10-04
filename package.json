@@ -1,0 +1,57 @@
+{
+  "author": {
+    "email": "kylers.partners@gmail.com",
+    "name": "Payload"
+  },
+  "description": "n8n community node for Payload Flow: compute auditable revenue entitlements from economic events via the Payload Rail API.",
+  "devDependencies": {
+    "@n8n/node-cli": "*",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "n8n-workflow": "*",
+    "prettier": "^3.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/Payloadhq/n8n-nodes-payload-flow",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "payload-flow",
+    "revenue",
+    "x402"
+  ],
+  "license": "MIT",
+  "n8n": {
+    "credentials": [
+      "dist/credentials/PayloadFlowApi.credentials.js"
+    ],
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/PayloadFlow/PayloadFlow.node.js"
+    ],
+    "strict": true
+  },
+  "name": "n8n-nodes-payload-flow",
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Payloadhq/n8n-nodes-payload-flow.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "vitest run"
+  },
+  "version": "0.1.0"
+}
