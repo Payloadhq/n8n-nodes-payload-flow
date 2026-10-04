@@ -3,7 +3,7 @@
     "email": "kylers.partners@gmail.com",
     "name": "Payload"
   },
-  "description": "n8n community node for Payload Flow: compute auditable revenue entitlements from economic events via the Payload Rail API.",
+  "description": "n8n community node for RevRule: compute auditable revenue entitlements from economic events via the Payload Rail API.",
   "devDependencies": {
     "@n8n/node-cli": "*",
     "@types/node": "^22.0.0",
