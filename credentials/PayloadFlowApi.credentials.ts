@@ -9,7 +9,7 @@ import type {
 export class PayloadFlowApi implements ICredentialType {
 	name = 'payloadFlowApi';
 
-	displayName = 'Payload Flow API';
+	displayName = 'RevRule API';
 
 	icon: Icon = {
 		light: 'file:../nodes/PayloadFlow/payloadflow.svg',
