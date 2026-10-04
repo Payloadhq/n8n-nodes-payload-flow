@@ -95,6 +95,7 @@ npm run lint    # n8n-node lint
 - Flow engine (MIT): https://github.com/Payloadhq/payload-flow
 - Revenue Blueprints: https://github.com/Payloadhq/payload-flow/tree/main/blueprints
 - Browser sandbox (no key needed): https://payloadhq.github.io/flow-sandbox.html
+- Telegram: https://t.me/PAYLOADTOOLS
 
 ## License
 
