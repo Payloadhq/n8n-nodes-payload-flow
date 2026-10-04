@@ -57,16 +57,16 @@ const showForIdOps = { resource: ['graph'], operation: ['activate', 'get', 'proc
 
 export class PayloadFlow implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Payload Flow',
+		displayName: 'RevRule',
 		name: 'payloadFlow',
 		icon: { light: 'file:payloadflow.svg', dark: 'file:payloadflow.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
 		description:
-			'Compute auditable revenue entitlements with Payload Flow. The Rail only proposes distributions; it never holds or moves money.',
+			'Compute auditable revenue entitlements with RevRule. The Rail only proposes distributions; it never holds or moves money.',
 		defaults: {
-			name: 'Payload Flow',
+			name: 'RevRule',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
