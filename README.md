@@ -1,6 +1,6 @@
 # n8n-nodes-payload-flow
 
-An n8n community node for [Payload Flow](https://github.com/Payloadhq/payload-flow): programmable revenue infrastructure. Define a Revenue Graph, send economic events from any n8n workflow, and get auditable entitlements back.
+An n8n community node for [RevRule](https://github.com/Payloadhq/payload-flow): programmable revenue infrastructure. Define a Revenue Graph, send economic events from any n8n workflow, and get auditable entitlements back.
 
 **The node never moves money.** It calls the Payload Rail API, which only *proposes* distributions (`status: "proposed"`). Execution stays with your payment provider (Stripe, an x402 facilitator, and so on). The royalty belongs to the Revenue Graph, not the payment rail.
 
@@ -14,7 +14,7 @@ Or from npm (self-hosted n8n):
 npm install n8n-nodes-payload-flow
 ```
 
-Restart n8n. The **Payload Flow** node appears in the node picker.
+Restart n8n. The **RevRule** node appears in the node picker.
 
 ## Credentials
 
@@ -27,7 +27,7 @@ curl -s -X POST https://payload-rail.fly.dev/v1/access-keys \
 
 Copy the `key` from the response. It is shown once.
 
-2. In n8n, create a **Payload Flow API** credential:
+2. In n8n, create a **RevRule API** credential:
    - **Base URL**: keep `https://payload-rail.fly.dev` for the hosted Rail, or point it at your own self-hosted Rail.
    - **API Key**: paste the key.
 
@@ -54,13 +54,13 @@ Split every Stripe sale between an operator and a contributor, automatically.
 
 **One-time setup** (run once, e.g. with an n8n manual trigger):
 
-1. Add a **Payload Flow** node → Operation **Create**. Paste a graph spec (see the [api-revenue-share blueprint](https://github.com/Payloadhq/payload-flow/blob/main/blueprints/api-revenue-share.json); replace `acct_OPERATOR` / `acct_CONTRIBUTOR` with your real Stripe account IDs). Execute it and note the graph `id`.
-2. Add a **Payload Flow** node → Operation **Activate**, Graph ID = your graph id. Execute.
+1. Add a **RevRule** node → Operation **Create**. Paste a graph spec (see the [api-revenue-share blueprint](https://github.com/Payloadhq/payload-flow/blob/main/blueprints/api-revenue-share.json); replace `acct_OPERATOR` / `acct_CONTRIBUTOR` with your real Stripe account IDs). Execute it and note the graph `id`.
+2. Add a **RevRule** node → Operation **Activate**, Graph ID = your graph id. Execute.
 
 **The recurring workflow:**
 
 1. **Webhook** node (or the **Stripe Trigger** node) listening for `checkout.session.completed`.
-2. **Payload Flow** node → Operation **Process Event**, Graph ID = your graph id. In the Event JSON, map the Stripe payload:
+2. **RevRule** node → Operation **Process Event**, Graph ID = your graph id. In the Event JSON, map the Stripe payload:
 
 ```json
 {
