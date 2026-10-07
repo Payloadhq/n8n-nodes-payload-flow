@@ -6,9 +6,9 @@ An n8n community node **by Payload** for [RevRule](https://github.com/Payloadhq/
 
 ## Install
 
-In n8n: **Settings → Community Nodes → Install**, then enter `n8n-nodes-payload-flow`.
+In n8n: **Settings → Community Nodes → Install**, then enter `Payloadhq/n8n-nodes-payload-flow`.
 
-Or from GitHub (self-hosted n8n):
+Or from the command line (self-hosted n8n):
 
 ```bash
 npm install Payloadhq/n8n-nodes-payload-flow
