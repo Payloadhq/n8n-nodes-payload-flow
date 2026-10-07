@@ -2,7 +2,7 @@
 
 An n8n community node **by Payload** for [RevRule](https://github.com/Payloadhq/payload-flow): programmable revenue infrastructure. Define a Revenue Graph, send economic events from any n8n workflow, and get auditable entitlements back.
 
-**The node never moves money.** It calls the Payload Rail API, which only *proposes* distributions (`status: "proposed"`). Execution stays with your payment provider (Stripe, an x402 facilitator, and so on). The royalty belongs to the Revenue Graph, not the payment rail.
+**The node never moves money.** It calls the RevRule API, which only *proposes* distributions (`status: "proposed"`). Execution stays with your payment provider (Stripe, an x402 facilitator, and so on). The royalty belongs to the Revenue Graph, not the payment rail.
 
 ## Install
 
@@ -18,7 +18,7 @@ Restart n8n. The **RevRule** node appears in the node picker.
 
 ## Credentials
 
-1. Get a free Rail API key (no signup form, no credit card):
+1. Get a free RevRule API key (no signup form, no credit card):
 
 ```bash
 curl -s -X POST https://payload-rail.fly.dev/v1/access-keys \
@@ -28,7 +28,7 @@ curl -s -X POST https://payload-rail.fly.dev/v1/access-keys \
 Copy the `key` from the response. It is shown once.
 
 2. In n8n, create a **RevRule API** credential:
-   - **Base URL**: keep `https://payload-rail.fly.dev` for the hosted Rail, or point it at your own self-hosted Rail.
+   - **Base URL**: keep `https://payload-rail.fly.dev` for the hosted RevRule API, or point it at your own self-hosted RevRule API.
    - **API Key**: paste the key.
 
 ## Operations
@@ -91,7 +91,7 @@ npm run lint    # n8n-node lint
 
 ## Links
 
-- Payload Rail quickstart: https://payloadhq.github.io/flow-rail.html
+- RevRule API quickstart: https://payloadhq.github.io/flow-rail.html
 - RevRule engine (MIT): https://github.com/Payloadhq/payload-flow
 - Revenue Blueprints: https://github.com/Payloadhq/payload-flow/tree/main/blueprints
 - Browser sandbox (no key needed): https://payloadhq.github.io/flow-sandbox.html
