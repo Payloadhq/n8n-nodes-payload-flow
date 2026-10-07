@@ -1,6 +1,6 @@
-# n8n-nodes-payload-flow
+# n8n-nodes-payload-flow by Payload
 
-An n8n community node for [RevRule](https://github.com/Payloadhq/payload-flow): programmable revenue infrastructure. Define a Revenue Graph, send economic events from any n8n workflow, and get auditable entitlements back.
+An n8n community node **by Payload** for [RevRule](https://github.com/Payloadhq/payload-flow): programmable revenue infrastructure. Define a Revenue Graph, send economic events from any n8n workflow, and get auditable entitlements back.
 
 **The node never moves money.** It calls the Payload Rail API, which only *proposes* distributions (`status: "proposed"`). Execution stays with your payment provider (Stripe, an x402 facilitator, and so on). The royalty belongs to the Revenue Graph, not the payment rail.
 
@@ -8,10 +8,10 @@ An n8n community node for [RevRule](https://github.com/Payloadhq/payload-flow): 
 
 In n8n: **Settings → Community Nodes → Install**, then enter `n8n-nodes-payload-flow`.
 
-Or from npm (self-hosted n8n):
+Or from GitHub (self-hosted n8n):
 
 ```bash
-npm install n8n-nodes-payload-flow
+npm install Payloadhq/n8n-nodes-payload-flow
 ```
 
 Restart n8n. The **RevRule** node appears in the node picker.
@@ -48,7 +48,7 @@ Amounts are integer micro-units (USD 1.00 = 1,000,000). `eventId` must be unique
 
 Ready-made graph specs live in the [Revenue Blueprints](https://github.com/Payloadhq/payload-flow/tree/main/blueprints): API revenue share, marketplace split, creator recoupment.
 
-## 5-minute tutorial: Stripe webhook → Flow split
+## 5-minute tutorial: Stripe webhook → RevRule split
 
 Split every Stripe sale between an operator and a contributor, automatically.
 
@@ -76,7 +76,7 @@ Split every Stripe sale between an operator and a contributor, automatically.
 }
 ```
 
-3. The node returns `entitlements` (who is owed what, with reasons), `fees`, `distributions` (all `status: "proposed"`), and `ledgerEntries`. Feed the entitlements into your payout step (Stripe transfers, a payout queue, an accounting sheet). Flow remembers recoupment balances across events, so repeat sales keep splitting correctly with no extra logic.
+3. The node returns `entitlements` (who is owed what, with reasons), `fees`, `distributions` (all `status: "proposed"`), and `ledgerEntries`. Feed the entitlements into your payout step (Stripe transfers, a payout queue, an accounting sheet). RevRule remembers recoupment balances across events, so repeat sales keep splitting correctly with no extra logic.
 
 Tip: use **Simulate Event** first with a test payload to preview the split before processing real webhooks.
 
@@ -92,7 +92,7 @@ npm run lint    # n8n-node lint
 ## Links
 
 - Payload Rail quickstart: https://payloadhq.github.io/flow-rail.html
-- Flow engine (MIT): https://github.com/Payloadhq/payload-flow
+- RevRule engine (MIT): https://github.com/Payloadhq/payload-flow
 - Revenue Blueprints: https://github.com/Payloadhq/payload-flow/tree/main/blueprints
 - Browser sandbox (no key needed): https://payloadhq.github.io/flow-sandbox.html
 - Telegram: https://t.me/payloadtool
