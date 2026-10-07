@@ -101,3 +101,9 @@ npm run lint    # n8n-node lint
 ## License
 
 MIT
+
+---
+
+**More from Payload** · [payloadhq.github.io](https://payloadhq.github.io/) · [all Payload repos](https://github.com/Payloadhq)
+
+Related: [payload-flow](https://github.com/Payloadhq/payload-flow) · [n8n-workflow-linter](https://github.com/Payloadhq/n8n-workflow-linter)
